@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "fed62f9a-59bd-49bc-a870-48a2386c2f5a",
+		"name": "OnlineExamPortal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\": \"Ganesh\",\r\n    \"mobNo\": 9453934593,\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"om\",\r\n    \"userAddr\": {\r\n        \"city\": \"Alwar\",\r\n        \"state\": \"Rajasthan\",\r\n        \"country\": \"India\",\r\n        \"zip\": 301001\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/create-user",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"create-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/user-details",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"user-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit User Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 2,\r\n    \"userName\": \"Shiv\",\r\n    \"userAddr\": {\r\n        \"addrId\": 2,\r\n        \"city\": \"Alwar\",\r\n        \"state\": \"Rajasthan\",\r\n        \"country\": \"India\",\r\n        \"zip\": 301001\r\n    },\r\n    \"mobNo\": 9453934593,\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"om\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/edit-user-details",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"edit-user-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"admin\":{\r\n        \"adminId\":99\r\n    },\r\n    \"testName\": \"Try test 5\",\r\n    \"questionList\": [\r\n        {\r\n            \"quesDesc\": \"What is an apple?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesDesc\": \"What is an aventador?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/create-test",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"create-test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Test Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"testId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/test-details",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"test-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Test Details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"testId\": 1,\r\n    \"testName\": \"Try updating test\",\r\n    \"questionList\": [\r\n        {\r\n            \"quesId\": 1,\r\n            \"quesDesc\": \"What is an apple?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceId\": 1,\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 2,\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 3,\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceId\": 4,\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesId\": 2,\r\n            \"quesDesc\": \"What is Lamborghini Aventador?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceId\": 5,\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceId\": 6,\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 7,\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 8,\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesId\": 5,\r\n            \"quesDesc\": \"What is a beyblade?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Toy\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/edit-test-details",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"edit-test-details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"parvati@gmail.com\",\r\n    \"pass\": \"om\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adminName\":\"exam admin\",\r\n    \"pass\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/admin-login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"admin-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Test List for Given Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adminId\":99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/test-list",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"test-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All-Test List for Student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/portal/all-test-list",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"all-test-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register For Test",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\":{\r\n        \"userId\": 3\r\n    },\r\n    \"test\":{\r\n        \"testId\": 4\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/portal/register-for-test",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"portal",
+						"register-for-test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
