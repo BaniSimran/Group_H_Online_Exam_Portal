@@ -1,9 +1,6 @@
 package com.examportal.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Address {
@@ -17,15 +14,23 @@ public class Address {
     private String country;
     private Long zip;
 
+    @OneToOne(mappedBy = "address")
+    private Student student;
+
+    @OneToOne(mappedBy = "address")
+    private Admin admin;
+
     public Address() {
     }
 
-    public Address(Long addrId, String city, String state, String country, Long zip) {
+    public Address(Long addrId, String city, String state, String country, Long zip, Student student, Admin admin) {
         this.addrId = addrId;
         this.city = city;
         this.state = state;
         this.country = country;
         this.zip = zip;
+        this.student = student;
+        this.admin = admin;
     }
 
     public Long getAddrId() {
@@ -66,5 +71,21 @@ public class Address {
 
     public void setZip(Long zip) {
         this.zip = zip;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
     }
 }

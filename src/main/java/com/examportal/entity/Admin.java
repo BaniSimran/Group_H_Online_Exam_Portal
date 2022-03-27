@@ -13,7 +13,7 @@ public class Admin {
     private String adminName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Address adminAddr;
+    private Address address;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "admin")
     private List<Test> test;
@@ -23,10 +23,10 @@ public class Admin {
 
     private String pass;
 
-    public Admin(Long adminId, String adminName, Address adminAddr, Long mobNo, String email, String pass) {
+    public Admin(Long adminId, String adminName, Address address, Long mobNo, String email, String pass) {
         this.adminId = adminId;
         this.adminName = adminName;
-        this.adminAddr = adminAddr;
+        this.address = address;
         this.mobNo = mobNo;
         this.email = email;
         this.pass = pass;
@@ -51,12 +51,12 @@ public class Admin {
         this.adminName = adminName;
     }
 
-    public Address getAdminAddr() {
-        return adminAddr;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdminAddr(Address adminAddr) {
-        this.adminAddr = adminAddr;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Long getMobNo() {

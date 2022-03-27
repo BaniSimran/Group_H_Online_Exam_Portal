@@ -1,8 +1,6 @@
 package com.examportal.dto;
 
 import com.examportal.entity.Admin;
-import com.examportal.entity.Question;
-import com.examportal.entity.Test;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.ArrayList;
@@ -23,7 +21,7 @@ public class AdminDTO {
     }
     public AdminDTO(Admin admin) {
         this.adminId = admin.getAdminId();
-        this.adminAddr = new AddressDTO(admin.getAdminAddr());
+        this.adminAddr = new AddressDTO(admin.getAddress());
         this.adminName = admin.getAdminName();
         this.email = admin.getEmail();
         this.mobNo = admin.getMobNo();

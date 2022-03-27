@@ -6,13 +6,13 @@
 	},
 	"item": [
 		{
-			"name": "Register User",
+			"name": "Register Student",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userName\": \"Ganesh\",\r\n    \"mobNo\": 9453934593,\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"om\",\r\n    \"userAddr\": {\r\n        \"city\": \"Alwar\",\r\n        \"state\": \"Rajasthan\",\r\n        \"country\": \"India\",\r\n        \"zip\": 301001\r\n    }\r\n}",
+					"raw": "{\r\n    \"studentName\": \"Ganesh\",\r\n    \"mobNo\": 9453934593,\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"om\",\r\n    \"address\": {\r\n        \"city\": \"Alwar\",\r\n        \"state\": \"Rajasthan\",\r\n        \"country\": \"India\",\r\n        \"zip\": 301001\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,27 +20,27 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/portal/create-user",
+					"raw": "localhost:8081/portal/create-student",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
 						"portal",
-						"create-user"
+						"create-student"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get User Details",
+			"name": "Get Student Details",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\":2\r\n}",
+					"raw": "{\r\n    \"studentId\":2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,27 +48,27 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/portal/user-details",
+					"raw": "localhost:8081/portal/student-details",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
 						"portal",
-						"user-details"
+						"student-details"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Edit User Details",
+			"name": "Edit Student Details",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"userId\": 2,\r\n    \"userName\": \"Shiv\",\r\n    \"userAddr\": {\r\n        \"addrId\": 2,\r\n        \"city\": \"Alwar\",\r\n        \"state\": \"Rajasthan\",\r\n        \"country\": \"India\",\r\n        \"zip\": 301001\r\n    },\r\n    \"mobNo\": 9453934593,\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"om\"\r\n}",
+					"raw": "{\r\n    \"studentId\": 2,\r\n    \"studentName\": \"Ganesh\",\r\n    \"address\": {\r\n        \"addrId\": 1,\r\n        \"city\": \"Alwar\",\r\n        \"state\": \"Rajasthan\",\r\n        \"country\": \"India\",\r\n        \"zip\": 301001\r\n    },\r\n    \"mobNo\": 9453934593,\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"change\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -76,14 +76,14 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8081/portal/edit-user-details",
+					"raw": "localhost:8081/portal/edit-student-details",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
 						"portal",
-						"edit-user-details"
+						"edit-student-details"
 					]
 				}
 			},
@@ -152,7 +152,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"testId\": 1,\r\n    \"testName\": \"Try updating test\",\r\n    \"questionList\": [\r\n        {\r\n            \"quesId\": 1,\r\n            \"quesDesc\": \"What is an apple?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceId\": 1,\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 2,\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 3,\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceId\": 4,\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesId\": 2,\r\n            \"quesDesc\": \"What is Lamborghini Aventador?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceId\": 5,\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceId\": 6,\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 7,\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 8,\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesId\": 5,\r\n            \"quesDesc\": \"What is a beyblade?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Toy\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"admin\": {\r\n        \"adminId\": 99\r\n    },\r\n    \"testId\": 1,\r\n    \"testName\": \"Try updating test\",\r\n    \"questionList\": [\r\n        {\r\n            \"quesId\": 1,\r\n            \"quesDesc\": \"What is an apple?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceId\": 1,\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 2,\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 3,\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceId\": 4,\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesId\": 2,\r\n            \"quesDesc\": \"What is Lamborghini Aventador?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceId\": 5,\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceId\": 6,\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 7,\r\n                    \"choiceDesc\": \"Fruit\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceId\": 8,\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"quesDesc\": \"What is a beyblade?\",\r\n            \"choicesList\": [\r\n                {\r\n                    \"choiceDesc\": \"Car\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Tree\",\r\n                    \"ans\": 0\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Toy\",\r\n                    \"ans\": 1\r\n                },\r\n                {\r\n                    \"choiceDesc\": \"Bike\",\r\n                    \"ans\": 0\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -180,7 +180,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"parvati@gmail.com\",\r\n    \"pass\": \"om\"\r\n}",
+					"raw": "{\r\n    \"email\": \"ganesh@gmail.com\",\r\n    \"pass\": \"change\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -283,7 +283,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\":{\r\n        \"userId\": 3\r\n    },\r\n    \"test\":{\r\n        \"testId\": 4\r\n    }\r\n}",
+					"raw": "{\r\n    \"student\":{\r\n        \"studentId\": 2\r\n    },\r\n    \"test\":{\r\n        \"testId\": 1\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

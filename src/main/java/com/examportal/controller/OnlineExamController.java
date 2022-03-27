@@ -2,12 +2,11 @@ package com.examportal.controller;
 
 import com.examportal.dto.*;
 import com.examportal.entity.Admin;
+import com.examportal.entity.Student;
 import com.examportal.entity.Test;
 import com.examportal.entity.TestRegistration;
-import com.examportal.entity.User;
 import com.examportal.service.OnlineExamService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,8 +18,8 @@ public class OnlineExamController {
 
 
     @PostMapping("/login")
-    public UserDTO loginUser(@RequestBody User user){
-        return onlineExamService.loginUser(user);
+    public StudentDTO loginStudent(@RequestBody Student student){
+        return onlineExamService.loginStudent(student);
     }
 
     @PostMapping("/admin-login")
@@ -33,19 +32,19 @@ public class OnlineExamController {
         return onlineExamService.getTestList(admin);
     }
 
-    @PostMapping("/create-user")
-    public Long createNewUser(@RequestBody User user) {
-        return onlineExamService.createNewUser(user);
+    @PostMapping("/create-student")
+    public Long createNewStudent(@RequestBody Student student) {
+        return onlineExamService.createNewStudent(student);
     }
 
-    @PostMapping("/user-details")
-    public User getUserDetails(@RequestBody User user) {
-        return onlineExamService.getUserDetails(user.getUserId());
+    @PostMapping("/student-details")
+    public StudentDTO getStudentDetails(@RequestBody Student student) {
+        return onlineExamService.getStudentDetails(student.getStudentId());
     }
 
-    @PutMapping("/edit-user-details")
-    public User editUserDetails(@RequestBody User user){
-        return onlineExamService.editUserDetails(user);
+    @PutMapping("/edit-student-details")
+    public StudentDTO editStudentDetails(@RequestBody Student student){
+        return onlineExamService.editStudentDetails(student);
     }
 
     @PostMapping("/all-test-list")
@@ -64,7 +63,7 @@ public class OnlineExamController {
     }
 
     @PostMapping("/test-details")
-    public TestDTO getUserDetails(@RequestBody Test test) {
+    public TestDTO getTestDetails(@RequestBody Test test) {
         return onlineExamService.getTestDetails(test.getTestId());
     }
 

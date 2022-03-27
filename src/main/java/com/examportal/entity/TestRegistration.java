@@ -10,8 +10,8 @@ public class TestRegistration {
     private Long testRegistrationId;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    private User user;
+    @JoinColumn(name = "studentId")
+    private Student student;
 
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "testId")
@@ -20,9 +20,9 @@ public class TestRegistration {
     public TestRegistration() {
     }
 
-    public TestRegistration(Long testRegistrationId, User user, Test test) {
+    public TestRegistration(Long testRegistrationId, Student student, Test test) {
         this.testRegistrationId = testRegistrationId;
-        this.user = user;
+        this.student = student;
         this.test = test;
     }
 
@@ -34,12 +34,12 @@ public class TestRegistration {
         this.testRegistrationId = testRegistrationId;
     }
 
-    public User getUser() {
-        return user;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public Test getTest() {
