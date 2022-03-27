@@ -1,60 +1,58 @@
 package com.examportal.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
-public class User {
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long studentId;
 
-    private String userName;
+    private String studentName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Address userAddr;
+    private Address address;
 
     private Long mobNo;
     private String email;
 
     private String pass;
 
-    public User() {
+    public Student() {
     }
 
-    public User(Long userId, String userName, Address userAddr, Long mobNo, String email, String pass) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userAddr = userAddr;
+    public Student(Long studentId, String studentName, Address address, Long mobNo, String email, String pass) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.address = address;
         this.mobNo = mobNo;
         this.email = email;
         this.pass = pass;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getStudentId() {
+        return studentId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public Address getUserAddr() {
-        return userAddr;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setUserAddr(Address userAddr) {
-        this.userAddr = userAddr;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Long getMobNo() {

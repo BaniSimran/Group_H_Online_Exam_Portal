@@ -4,7 +4,6 @@ import com.examportal.dao.*;
 import com.examportal.dto.*;
 import com.examportal.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +13,7 @@ import java.util.NoSuchElementException;
 public class OnlineExamService {
 
     @Autowired
-    OnlineExamUserDao onlineExamUserDao;
+    OnlineExamStudentDao onlineExamStudentDao;
 
     @Autowired
     OnlineExamTestDao onlineExamTestDao;
@@ -32,18 +31,22 @@ public class OnlineExamService {
     TestRegistrationDao testRegistrationDao;
 
 
-    public Long createNewUser(User user) {
-        User myObj = onlineExamUserDao.save(user);
-        onlineExamUserDao.flush();
-        return myObj.getUserId();
+    public Long createNewStudent(Student student) {
+        Student myObj = onlineExamStudentDao.save(student);
+        onlineExamStudentDao.flush();
+        return myObj.getStudentId();
     }
 
-    public User getUserDetails(Long userId) {
-        return onlineExamUserDao.findById(userId).get();
+    public StudentDTO getStudentDetails(Long studentId) {
+        Student student = onlineExamStudentDao.findById(studentId).get();
+        StudentDTO studentDTO = new StudentDTO(student);
+        return studentDTO;
     }
 
-    public User editUserDetails(User user) {
-        return onlineExamUserDao.findById(createNewUser(user)).get();
+    public StudentDTO editStudentDetails(Student student) {
+        Student obj = onlineExamStudentDao.findById(createNewStudent(student)).get();
+        StudentDTO studentDTO = new StudentDTO(obj);
+        return studentDTO;
     }
 
     public Long createNewTest(Test test){
@@ -72,16 +75,16 @@ public class OnlineExamService {
         return testDTO;
     }
 
-    public UserDTO loginUser(User user) {
-        User obj = onlineExamUserDao.findByEmail(user.getEmail());
+    public StudentDTO loginStudent(Student student) {
+        Student obj = onlineExamStudentDao.findByEmail(student.getEmail());
         if(obj==null){
-            throw new RuntimeException("User Does Not Exist");
+            throw new RuntimeException("Student Does Not Exist");
         }
-        if(!obj.getPass().toString().equals(user.getPass().toString())){
+        if(!obj.getPass().toString().equals(student.getPass().toString())){
             throw new RuntimeException("Email/Password not correct.");
         }
-        UserDTO userDTO = new UserDTO(obj);
-        return userDTO;
+        StudentDTO studentDTO = new StudentDTO(obj);
+        return studentDTO;
     }
 
     public AdminDTO loginAdmin(Admin admin) {
