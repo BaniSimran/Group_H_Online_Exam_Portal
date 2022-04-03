@@ -7,6 +7,7 @@ import com.examportal.entity.Test;
 import com.examportal.entity.TestRegistration;
 import com.examportal.service.OnlineExamService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,7 +16,6 @@ public class OnlineExamController {
 
     @Autowired
     OnlineExamService onlineExamService;
-
 
     @PostMapping("/login")
     public StudentDTO loginStudent(@RequestBody Student student){
@@ -38,7 +38,7 @@ public class OnlineExamController {
     }
 
     @PostMapping("/student-details")
-    public StudentDTO getStudentDetails(@RequestBody Student student) {
+    public Student getStudentDetails(@RequestBody Student student) {
         return onlineExamService.getStudentDetails(student.getStudentId());
     }
 

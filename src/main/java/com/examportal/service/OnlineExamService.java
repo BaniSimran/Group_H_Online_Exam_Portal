@@ -37,10 +37,10 @@ public class OnlineExamService {
         return myObj.getStudentId();
     }
 
-    public StudentDTO getStudentDetails(Long studentId) {
+    public Student getStudentDetails(Long studentId) {
         Student student = onlineExamStudentDao.findById(studentId).get();
         StudentDTO studentDTO = new StudentDTO(student);
-        return studentDTO;
+        return student;
     }
 
     public StudentDTO editStudentDetails(Student student) {
