@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
+    <title>Student Registration</title>
+
+</head>
+<body>
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Student Registration</h1>
+                        </div>
+                        <form class="user" action="#" method="post" th:action="@{/}" th:object="${student}" autocomplete="off">
+                            <div class="form-group">
+                                <input type="text" class="form-control form-control-user" id="studentName"
+                                       placeholder="Student Name" th:field="*{studentName}" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                       placeholder="Email Address" th:field="*{email}" autocomplete="off">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user"
+                                           id="mobileNo" placeholder="Mobile no." th:field="*{mobNo}" autocomplete="off">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user"
+                                           id="password" placeholder="Password" th:field="*{pass}" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="city"
+                                           placeholder="City" th:field="*{address.city}" autocomplete="off">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user" id="state"
+                                           placeholder="State" th:field="*{address.state}" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="country"
+                                           placeholder="Country" th:field="*{address.country}" autocomplete="off">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user" id="zip"
+                                           placeholder="Zipcode" th:field="*{address.zip}" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
+                                </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <button type="reset" class="btn btn-primary btn-user btn-block">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="medium" href="/index">Already have an account? Login!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -15,6 +15,8 @@ public class Student {
     private Address address;
 
     private Long mobNo;
+
+    @Column(unique = true)
     private String email;
 
     private String pass;

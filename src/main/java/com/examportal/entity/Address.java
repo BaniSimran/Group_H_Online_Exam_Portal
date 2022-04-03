@@ -23,14 +23,12 @@ public class Address {
     public Address() {
     }
 
-    public Address(Long addrId, String city, String state, String country, Long zip, Student student, Admin admin) {
+    public Address(Long addrId, String city, String state, String country, Long zip) {
         this.addrId = addrId;
         this.city = city;
         this.state = state;
         this.country = country;
         this.zip = zip;
-        this.student = student;
-        this.admin = admin;
     }
 
     public Long getAddrId() {
@@ -73,19 +71,19 @@ public class Address {
         this.zip = zip;
     }
 
-    public Student getStudent() {
-        return student;
-    }
+//    public Student getStudent() {
+//        return student;
+//    }
+//
+//    public void setStudent(Student student) {
+//        this.student = student;
+//    }
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
-
-    public Admin getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Admin admin) {
-        this.admin = admin;
-    }
+//    public Admin getAdmin() {
+//        return admin;
+//    }
+//
+//    public void setAdmin(Admin admin) {
+//        this.admin = admin;
+//    }
 }

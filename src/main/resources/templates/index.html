@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <div class="row">
+            <div class=" col-lg-5 my-4 mx-auto" align="center">
+                <div class="text-center">
+                    <h1 class="large text-gray-900 mb-4">Online Exam Portal</h1>
+                </div>
+                <a href="/student-login" class="d-none d-lg-inline-block btn btn-lg btn-primary shadow-sm"><i
+                        class="fas fa-download fa-sm text-white-50"></i>Student Login</a>
+                <a href="/admin-login" class="d-none d-lg-inline-block btn btn-lg btn-primary shadow-sm"><i
+                        class="fas fa-download fa-sm text-white-50"></i>Admin Login</a>
+            </div>
+            </div>
+            <div class="text-center">
+                <p class="medium">New Student?<a href="/register-student"> Register now.</a></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
