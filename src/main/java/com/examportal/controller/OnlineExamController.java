@@ -47,7 +47,7 @@ public class OnlineExamController {
         return onlineExamService.editStudentDetails(student);
     }
 
-    @PostMapping("/all-test-list")
+    @GetMapping("/all-test-list")
     public TestListDTO getAllTestList(){
         return onlineExamService.getAllTestList();
     }
